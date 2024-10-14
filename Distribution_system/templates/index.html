@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dorm Allocation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Dorm Allocation System</h1>
+    
+    <!-- Form to enter user name and preferred dorm -->
+    <form action="/allocate" method="POST">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        
+        <label for="dorm">Preferred Dorm:</label>
+        <select id="dorm" name="dorm" required>
+            <option value="Dorm A">Dorm A</option>
+            <option value="Dorm B">Dorm B</option>
+            <option value="Dorm C">Dorm C</option>
+            <option value="Dorm D">Dorm D</option>
+        </select>
+        <br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <!-- Display allocation result -->
+    {% if message %}
+    <p><strong>{{ message }}</strong></p>
+    {% endif %}
+    
+    <!-- Display current dorm assignments -->
+    <h2>Current Dorm Assignments:</h2>
+    <ul>
+        {% for dorm, students in dorms.items() %}
+        <li><strong>{{ dorm }}:</strong>
+            <ul>
+                {% for student in students %}
+                <li>{{ student }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
