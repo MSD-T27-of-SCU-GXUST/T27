@@ -1,0 +1,26 @@
+#Changelog
+
+##[2.0.0] - 2024-10-04
+
+### Added
+-Added environment variable configuration files and deployment configuration files.
+-Added change log
+
+### Improved
+-Optimized the code structure to reduce possible lags.
+-Updated the front-end style to enhance the responsive experience of mobile devices.
+-Optimized database query performance and reduced loading time.
+
+##[1.0.1] - 2024-10-03
+
+### Added
+-The Python code is combined with the HTML code using the Flask framework, and now users can use this system on the web page.
+
+### Improved
+-Optimized the code structure to reduce possible lags.
+
+##[1.0.0] - 2024-10-03
+
+### Added
+-This version is a preliminary release, with basic functions, and can be used through the console, but still needs to be improved.
+
